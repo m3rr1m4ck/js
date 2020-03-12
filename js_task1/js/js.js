@@ -1,34 +1,78 @@
-// function showFirstMessage(text) {
-//     alert(text);
-//     let num = 20;
+let options = {
+    width: 1024,
+    height: 1024,
+    name: "test"
+};
+
+console.log(options.name);
+options.bool = false;
+options.colors = {
+    border: "black",
+    bg: "red"
+};
+
+delete options.bool;
+
+console.log(options);
+
+for (let key in options) {
+    console.log('Свойство ' + key + ' имеет значение ' + options[key]);
+}
+console.log(Object.keys(options).length);
+
+// let arr = ["first", 2, 3, "four", 5];
+
+// // for (let i = 0; i < arr.length; i++) {
+// //     console.log(arr[i]);
+// // }
+
+// arr.forEach(function(item, i, mass) {
+//     console.log(i + ': ' + item + ' (массив: ' + mass + ')');
+// });
+
+// console.log(arr);
+
+// let mass = [1, 3, 4, 6, 7];
+
+// for (let key of mass) {
+//     console.log(key);
 // }
 
-// showFirstMessage("Zhenya");
-// console.log(num);
+// let ans = prompt("", ""),
+//     arr = [];
 
-// let calc = function(a,b) {
-//     return (a + b);
-// }
+// arr = ans.split(',');
+// console.log(arr);
 
-let calc = (a,b) => a+b;
+// let arr = ["qwe", 'zzz', 'pp', 'rqa'],
+//     i = arr.join(', ');
 
-console.log(calc(4, 10));
-console.log(calc(8, 10));
+// console.log(i);
 
-function retVar() {
-    let num = 50;
-    return num;
+let arr = [1, 15, 4],
+    i = arr.sort(compareNum);
+
+function compareNum(a,b) {
+    return a-b;
 }
 
-let anotherNum = retVar();
-console.log(anotherNum);
+console.log(i);
 
-let str = "test";
-console.log(str.length);
-console.log(str.toUpperCase());
-console.log(str.toLowerCase());
+let soldier = {
+    health : 400,
+    armor: 100
+};
 
-let twelve = "12.2px";
-// console.log(Math.round(twelve));
-console.log(parseInt(twelve));
-console.log(parseFloat(twelve));
+let john = {
+    health: 100
+};
+
+john.__proto__ = soldier;
+
+console.log(john);
+console.log(john.armor);
+
+function multiply(a, b) {
+    a * b;
+}
+  
